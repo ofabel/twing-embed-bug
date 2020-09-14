@@ -1,0 +1,1 @@
+This repository illustrates a bug in the chain loader of [Twing](https://github.com/NightlyCommit/twing) in version 5.0.2. To start just run `npm start`.
