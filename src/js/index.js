@@ -2,13 +2,9 @@ const path = require('path');
 
 const { TwingEnvironment, TwingLoaderRelativeFilesystem, TwingLoaderFilesystem, TwingLoaderChain } = require('twing');
 
-const chain = new TwingLoaderChain();
+const twing = new TwingEnvironment(new TwingLoaderRelativeFilesystem());
 
-chain.addLoader(new TwingLoaderRelativeFilesystem());
-
-const twing = new TwingEnvironment(chain);
-
-const pathToIndex = path.resolve(__dirname, '..', 'twig', 'index.twig');
+const pathToIndex = './src/twig/index.twig';
 
 twing.render(pathToIndex, {})
     .then(output => console.info(output))
